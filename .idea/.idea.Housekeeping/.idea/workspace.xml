@@ -5,16 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2aaf7f35-d209-4e40-a38c-12defe11f118" name="Changes" comment="2nd commit">
-      <change afterPath="$PROJECT_DIR$/housekeeping/src/Encounter.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/housekeeping/src/EncounterTypes.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/housekeeping/src/Monsters.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/housekeeping/src/pages/Characters.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/housekeeping/src/pages/Encounter.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/housekeeping/src/pages/TheStorySoFar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/housekeeping/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/housekeeping/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/housekeeping/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/housekeeping/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/housekeeping/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/housekeeping/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/housekeeping/src/components/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/housekeeping/src/components/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Housekeeping/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Housekeeping/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/housekeeping/src/Encounter.css" beforeDir="false" afterPath="$PROJECT_DIR$/housekeeping/src/Encounter.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/housekeeping/src/pages/Encounter.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/housekeeping/src/pages/Encounter.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,43 +25,43 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "Nazrat450"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Nazrat450&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Nazrat450/Housekeeping.git",
-    "accountId": "56eb513c-ecb4-451d-9ac8-0711beb66185"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Nazrat450/Housekeeping.git&quot;,
+    &quot;accountId&quot;: &quot;56eb513c-ecb4-451d-9ac8-0711beb66185&quot;
   }
-}]]></component>
+}</component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 2
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
   <component name="ProjectId" id="2nFEGYiYux6IsznwsfCUwfZBarG" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
-    "ts.external.directory.path": "C:\\Users\\matth\\RiderProjects\\Housekeeping\\housekeeping\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\matth\\RiderProjects\\Housekeeping\\housekeeping\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -78,6 +71,7 @@
       <option name="presentableId" value="Default" />
       <updated>1728560330416</updated>
       <workItem from="1728560331732" duration="6457000" />
+      <workItem from="1728728472213" duration="3558000" />
     </task>
     <task id="LOCAL-00001" summary="2nd commit">
       <option name="closed" value="true" />

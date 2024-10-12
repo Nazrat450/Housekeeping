@@ -1,9 +1,9 @@
-﻿// Encounter.tsx
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import { Character, Monster, Encounter } from '../EncounterTypes';
-import { monstersList} from '../Monsters'
+import { monstersList } from '../Monsters';
 import { v4 as uuidv4 } from 'uuid';
-import '../Encounter.css'
+import '../Encounter.css';
+
 interface Player extends Character {
     level: number;
     armorClass: number;
@@ -16,7 +16,7 @@ const EncounterTracker: React.FC = () => {
         currentTurnIndex: 0,
     });
 
-    const [selectedMonsterId, setSelectedMonsterId] = useState<string>('');
+    const [selectedTargetId, setSelectedTargetId] = useState<string>(''); // Track selected player/monster
     const [playerName, setPlayerName] = useState<string>('');
     const [playerLevel, setPlayerLevel] = useState<number>(1);
     const [playerHealth, setPlayerHealth] = useState<number>(100);
@@ -37,8 +37,6 @@ const EncounterTracker: React.FC = () => {
             ...prev,
             players: [...prev.players, newPlayer],
         }));
-        
-        
 
         // Clear the input fields after adding the player
         setPlayerName('');
@@ -63,7 +61,7 @@ const EncounterTracker: React.FC = () => {
             monsters: [...prev.monsters, newMonster],
         }));
     };
-    
+
     const initiativeOrder = [...encounter.players, ...encounter.monsters].sort(
         (a, b) => b.initiative - a.initiative
     );
@@ -72,8 +70,37 @@ const EncounterTracker: React.FC = () => {
     const nextTurn = () => {
         setEncounter((prev) => ({
             ...prev,
-            currentTurnIndex: (prev.currentTurnIndex + 1) % initiativeOrder.length 
+            currentTurnIndex: (prev.currentTurnIndex + 1) % initiativeOrder.length,
         }));
+    };
+
+    // Handle attack logic (reduce HP)
+    const attackTarget = () => {
+        if (!selectedTargetId) return;
+
+        setEncounter((prev) => {
+            const updatedMonsters = prev.monsters.map((monster) =>
+                monster.id === selectedTargetId ? { ...monster, hp: monster.hp - 10 } : monster
+            );
+
+            const updatedPlayers = prev.players.map((player) =>
+                player.id === selectedTargetId ? { ...player, hp: player.hp - 10 } : player
+            );
+
+            return {
+                ...prev,
+                monsters: updatedMonsters,
+                players: updatedPlayers,
+            };
+        });
+
+        // Clear the selection after attack
+        setSelectedTargetId('');
+    };
+
+    // Click on a player or monster to select them
+    const selectTarget = (id: string) => {
+        setSelectedTargetId(id);
     };
 
     return (
@@ -125,8 +152,8 @@ const EncounterTracker: React.FC = () => {
             <div id="add-monster-section">
                 <h2>Add Monster</h2>
                 <select
-                    value={selectedMonsterId}
-                    onChange={(e) => setSelectedMonsterId(e.target.value)}
+                    value={selectedTargetId}
+                    onChange={(e) => addMonster(e.target.value)}
                 >
                     <option value="">Select a monster</option>
                     {monstersList.map((monster) => (
@@ -135,7 +162,7 @@ const EncounterTracker: React.FC = () => {
                         </option>
                     ))}
                 </select>
-                <button onClick={() => addMonster(selectedMonsterId)} disabled={!selectedMonsterId}>
+                <button onClick={() => addMonster(selectedTargetId)} disabled={!selectedTargetId}>
                     Add Monster
                 </button>
             </div>
@@ -143,27 +170,51 @@ const EncounterTracker: React.FC = () => {
             <div id="encounter-details">
                 <h2>Encounter</h2>
                 <button onClick={nextTurn}>Next Turn</button>
-                <div id="players-section">
-                    <h3>Players</h3>
-                    {encounter.players.map((player) => (
-                        <div key={player.id} className="player-item">
-                            {player.name} (Lvl: {player.level}) - HP: {player.hp}/{player.maxHp} - AC: {player.armorClass} - Initiative: {player.initiative}
+
+                {initiativeOrder[encounter.currentTurnIndex]?.id &&
+                    encounter.players.find((p) => p.id === initiativeOrder[encounter.currentTurnIndex].id) && (
+                        <div id="attack-section">
+                            <h3>Attack</h3>
+                            <button onClick={attackTarget} disabled={!selectedTargetId}>
+                                Attack
+                            </button>
                         </div>
-                    ))}
+                    )}
+
+                <div id="players-monsters-container">
+                    <div id="players-section">
+                        <h3>Players</h3>
+                        {encounter.players.map((player) => (
+                            <div
+                                key={player.id}
+                                className={`player-item ${selectedTargetId === player.id ? 'selected' : ''}`}
+                                onClick={() => selectTarget(player.id)}
+                            >
+                                {player.name} (Lvl: {player.level}) - HP: {player.hp}/{player.maxHp} -
+                                AC: {player.armorClass} - Initiative: {player.initiative}
+                            </div>
+                        ))}
+                    </div>
+
+                    <div id="monsters-section">
+                        <h3>Monsters</h3>
+                        {encounter.monsters.map((monster) => (
+                            <div
+                                key={monster.id}
+                                className={`monster-item ${selectedTargetId === monster.id ? 'selected' : ''}`}
+                                onClick={() => selectTarget(monster.id)}
+                            >
+                                {monster.name} - HP: {monster.hp}/{monster.maxHp} - Initiative: {monster.initiative}
+                                <ul>
+                                    {monster.attacks.map((attack, index) => (
+                                        <li key={index}>{attack}</li>
+                                    ))}
+                                </ul>
+                            </div>
+                        ))}
+                    </div>
                 </div>
-                <div id="monsters-section">
-                    <h3>Monsters</h3>
-                    {encounter.monsters.map((monster) => (
-                        <div key={monster.id} className="monster-item">
-                            {monster.name} - HP: {monster.hp}/{monster.maxHp} - Initiative: {monster.initiative}
-                            <ul>
-                                {monster.attacks.map((attack, index) => (
-                                    <li key={index}>{attack}</li>
-                                ))}
-                            </ul>
-                        </div>
-                    ))}
-                </div>
+
                 <div id="current-turn">
                     <h3>Current Turn: {encounter.currentTurnIndex + 1}</h3>
                 </div>

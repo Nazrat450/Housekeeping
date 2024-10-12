@@ -57,16 +57,29 @@
 }
 
 #players-section, #monsters-section {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 20px;
+    flex: 1; /* Allow the sections to take up equal space */
+    margin: 0 20px; /* Add some spacing between the sections */
+}
+
+#players-monsters-container {
+    display: flex; /* Use flexbox to position sections side by side */
+    justify-content: space-between; /* Align both sections equally */
+    padding-top: 20px; /* Add some space above */
+}
+
+#players-section h3, #monsters-section h3 {
+    text-align: center; /* Center align the headings */
+    border-bottom: 2px solid #333; /* Add a border under the heading to simulate a tally board */
+    padding-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 .player-item, .monster-item {
     background-color: #e0e0e0;
     border-radius: 8px;
     padding: 10px;
-    width: 45%;
+    margin-bottom: 10px;
+    width: 100%; /* Full width of the section */
     text-align: left;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     position: relative;
@@ -133,4 +146,21 @@
     color: #007bff;
     font-weight: bold;
     margin-right: 5px;
+}
+.selected {
+    background-color: yellow;  
+    border: 2px solid red;     
+    padding: 10px;             
+}
+
+.player-item, .monster-item {
+    cursor: pointer;           
+    margin-bottom: 10px;       
+    padding: 5px;              
+    border: 1px solid #ccc;    
+    transition: background-color 0.3s ease; 
+}
+
+.player-item:hover, .monster-item:hover {
+    background-color: lightgray; 
 }
