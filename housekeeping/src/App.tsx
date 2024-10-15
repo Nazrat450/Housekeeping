@@ -7,6 +7,7 @@ import TheStorySoFar from './pages/TheStorySoFar';
 import CharacterPage from './pages/Characters'
 import Encounter from './pages/Encounter';
 
+
 const App: React.FC = () => {
   return (
       <Router>
@@ -20,6 +21,7 @@ const App: React.FC = () => {
         </Routes>
       </Router>
   );
+    
 };
 
 export default App;

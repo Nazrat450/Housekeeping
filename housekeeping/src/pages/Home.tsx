@@ -1,12 +1,16 @@
 ﻿import React from 'react';
+import MapBackground from '../components/Background';
 
 const Home: React.FC = () => {
     return (
         <div>
-            <h1>HouseKeeping</h1>
-            <p>This is the home page.</p>
+            <MapBackground />
+            
+    
         </div>
+        
     );
+    
 };
 
 export default Home;

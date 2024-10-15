@@ -5,9 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2aaf7f35-d209-4e40-a38c-12defe11f118" name="Changes" comment="2nd commit">
+      <change afterPath="$PROJECT_DIR$/housekeeping/src/components/Background.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/housekeeping/src/components/Background.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Housekeeping/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Housekeeping/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/housekeeping/src/Encounter.css" beforeDir="false" afterPath="$PROJECT_DIR$/housekeeping/src/Encounter.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/housekeeping/src/pages/Encounter.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/housekeeping/src/pages/Encounter.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/housekeeping/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/housekeeping/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/housekeeping/src/pages/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/housekeeping/src/pages/Home.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +19,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="TypeScript File" />
         <option value="TypeScript JSX File" />
         <option value="CSS File" />
       </list>
@@ -72,6 +75,7 @@
       <updated>1728560330416</updated>
       <workItem from="1728560331732" duration="6457000" />
       <workItem from="1728728472213" duration="3558000" />
+      <workItem from="1728980358156" duration="7476000" />
     </task>
     <task id="LOCAL-00001" summary="2nd commit">
       <option name="closed" value="true" />
